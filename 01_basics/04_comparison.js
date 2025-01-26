@@ -19,6 +19,29 @@
 console.log("2" == 2); //true
 console.log("2" === 2); //false
 
+// ****************************************
+
+//Memory - Stack and Heap
+// all primitive datatypes uses Stack
+// all non - primitive datatypes uses Heap
+
+let myYoutubeName = "hitesh"
+anothername = "chaiaurcode" //copy of var is created
+console.log(myYoutubeName);
+console.log(anothername);
+
+//non-primitive
+let user1 = {
+    email: "user@gmail" ,
+    upi: "user@ybl"
+}
+
+let user2 = user1 //reference created so value will change using user2 also
+user2.email = "hitesh@google.com"
+
+console.log(user1.email);
+console.log(user2.email);
+
 
 
 
