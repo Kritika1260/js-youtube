@@ -46,3 +46,4 @@ const max = 20
 // *********** IMPORTANT ******************
 // to get random value that ranges in 10 to 20
 console.log(Math.floor(Math.random() * (max - min + 1)) + min) //added min to get min value 10 not less than that basically to avoid 0
+//add
