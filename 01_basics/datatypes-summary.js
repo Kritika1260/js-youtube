@@ -27,7 +27,7 @@ const scoreVal = 100.3 // also num not treated as float
 const isLoggedIn = false; //boolean
 const outsideTemp = null; // empty val
 let userEmail; //undefined
-const id = Symbol('123')
+const id = Symbol('123') //immutable and unique
 const anotherId = Symbol('123')
 // val of id and anotherid will not be same
 // console.log(id === anotherId);

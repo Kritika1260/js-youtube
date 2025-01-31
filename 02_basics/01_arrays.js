@@ -25,13 +25,14 @@ const newArray = myArray.join()
 // console.log(myArray);//gives array as output
 // console.log(newArray);//gives all number as output but as string seperated by comma
  
+// ******** IMPORTANT ************
 //slice and splice
 console.log("A", myArray);
 const myn1 = myArray.slice(1, 3)//returns section of array, last range not included
 console.log(myn1);
 console.log("B", myArray);
 
-const myn2 = myArray.splice(1, 3)//returns section of array
+const myn2 = myArray.splice(1, 3)//manipulates original array and remove ele from 1 to 3 index incliding 1 and 3
 console.log("C", myArray);
 console.log(myn2);
 
