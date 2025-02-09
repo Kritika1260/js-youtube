@@ -56,12 +56,26 @@ const users = [
         email: "ab@gmail.com"
     }
 ]
-console.log(users[1].email);
+// console.log(users[1].email);
 
-//very imp
-console.log(Object.keys(tinderUser)); //array output will come [ 'id', 'name', 'isLoggedIn' ]
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// //very imp
+// console.log(Object.keys(tinderUser)); //array output will come [ 'id', 'name', 'isLoggedIn' ]
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')); //to check if propert is present
 
+
+const course = {
+    courseName: "js",
+    price: "99",
+    courseInstructor: "Hitesh"
+}
+// course.courseInstructor to print value
+
+//another method to access, used widely
+const {courseInstructor} = course
+console.log(courseInstructor); //here we didn't write course.courseInstructor because of above statement
+
+const {courseInstructor:Instructor} = course
+console.log(Instructor); //destructure object

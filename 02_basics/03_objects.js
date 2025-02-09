@@ -53,3 +53,5 @@ Juser.greetingTwo = function()
 console.log(Juser.greeting()); // op as = Hello J user
 // console.log(Juser.greeting); //only reference of function will come
 console.log(Juser.greetingTwo());
+
+
