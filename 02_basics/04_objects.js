@@ -79,3 +79,4 @@ console.log(courseInstructor); //here we didn't write course.courseInstructor be
 
 const {courseInstructor:Instructor} = course
 console.log(Instructor); //destructure object
+
