@@ -68,4 +68,4 @@ const addTwo = function(num) //this is also called expression, we can create fun
     return num+2
 }
 //in js var can store func also
-addTwo(5)//but here if we will write this linee above addTwo declaration we will get error called hosting
+addTwo(5)//but here if we will write this linee above addTwo declaration we will get error called hoisting
