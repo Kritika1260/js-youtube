@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <dive class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tues</div>
+        <div class="day">Wed</div>
+        <div class="day">Thur</div>
+    </dive>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children); //gives html collection of days
+    // console.log(parent.children[1].innerHTML); //Tues
+     
+    for (let i =0;  i<parent.children.length; i++) {
+        //console.log(parent.children[i].innerHTML);
+        //op = Mon
+            // Tues
+            // Wed
+            // Thur     
+    }
+    parent.children[1].style.color = "orange"
+    //console.log(parent.firstElementChild); //<div class="day">Mon</div>
+    //console.log(parent.lastElementChild);//<div class="day">Thur</div>
+    const dayOne = document.querySelector('.day') //selecting parent from child
+    //console.log(dayOne); //<div class="day">Mon</div>
+
+    //console.log(dayOne.parentElement); //going to parent without querySelector
+    //<dive class="parent">…</dive>
+
+    console.log(dayOne.nextElementSibling); //<div class="day" style="color: orange;">Tues</div>
+    console.log("NODES: ",parent.childNodes);
+    //NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+    
+    
+    
+    
+</script>
+
+</html>

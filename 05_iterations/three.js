@@ -32,4 +32,4 @@ const myObj = {
 }
 for(const [key, value] of myObj){
     console.log(key, ':-', value); 
-}
+} //this for of loop will not work for obj so we will use for in loop

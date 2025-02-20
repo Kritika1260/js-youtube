@@ -1,0 +1,196 @@
+<!--  "The W3C Document Object Model (DOM) is a platform and language-neutral interface  --> 
+<!--that allows programs and scripts to dynamically access and update the content, structure, and style of a document."-->
+
+
+<!-- run this in wondows console
+document.getElementById("title")
+op= <h1 id=​"title" class=​"heading">​Dom Learning on chai aur code​</h1>​
+
+document.getElementById('title').od
+op = undefined 
+
+document.getElementById('title').id
+op = 'title'
+
+document.getElementById('title').class
+op = undefined
+
+document.getElementById('title').className
+op = 'heading'
+
+document.getElementById('title').getAttribute('class')
+op = 'heading'
+
+document.getElementById('title').setAttribute('class', 'test')
+op = undefined, here class will be changed to test, this will overwrite
+
+document.getElementById('title').setAttribute('class', 'test heading')
+class set to test heading
+
+
+const title =  document.getElementById('title')
+undefined
+
+title
+<h1 id=​"title" class=​"test">​Dom Learning on chai aur code​</h1>​
+
+title.style.backgroundColor = 'green'
+'green'
+title.style.padding = "15px"
+'15px'
+title.style.borderRadius = "15px"
+'15px'
+
+title.textContent -- this will not hide anything the part written in span will also be displayed
+'Dom Learning on chai aur code'
+
+title.innerHTML -- this will also display the html of span tag(we are taking span span just as example)
+'Dom Learning on chai aur code'
+
+title.innerText -- this will hide the hidden text like when we write something in span tag
+'Dom Learning on chai aur code'
+
+
+****** querySelect == allows you to select the first element within the document that matches a specified CSS selector.
+
+basically these are css selector
+document.querySelector('h2') --selects first h2
+<h2>​ Lorem ipsum dolor sit amet consectetur.​</h2>​
+
+document.querySelector('#title') //selects id with name title
+<h1 id=​"title" class=​"heading">​Dom Learning on chai aur code​</h1>​
+
+document.querySelector('.heading') //selects class with name heading
+<h1 id=​"title" class=​"heading">​Dom Learning on chai aur code​</h1>​
+
+document.querySelector('input[type="password"]') -- toselect input field
+null -- because there is no input field in our code
+
+***************** we added some ul and li
+
+document.querySelector('ul')
+<ul>​…​</ul>​<li>​…​</li>​<li>​…​</li>​<li>​…​</li>​</ul>​
+
+const myul = document.querySelector('ul')
+undefined
+
+myul.querySelector('li')
+<li>​…​</li>​::marker​"one"</li>​
+
+const turnGreen = myul.querySelector('li')
+undefined
+
+turnGreen.style.backgroundColor = "green"
+'green'
+
+turnGreen.style.padding = "10px"
+'10px'
+
+turnGreen.style.padding = "20px"
+'20px'
+
+turnGreen.innerText
+'one'
+
+turnGreen.innerText = "five"
+'five'
+
+**** querySelectorAll return a nodelist --map cannot be used but forEach can be used
+
+document.querySelectorAll('li')
+NodeList(3) [li, li, li]
+ 
+here this node list is not an array so we are getting undefined
+
+const tempLiList = document.querySelectorAll('li')
+undefined
+
+const myH1 = document.querySelectorAll('h1')
+undefined
+
+myH1
+NodeList [h1#title.heading]           getting nodelist as output
+
+myH1.style.color = 'green'
+VM1025:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:18
+(anonymous) @ VM1025:1Understand this errorAI    ,,, we are getting this error because this is node list so we have to tell which for which h1 we want to change colour
+
+myH1[0].style.color = 'green'
+'green'
+
+
+******************HTML Collection ---for each cannot be used
+
+document.getElementsByClassName('list-item')
+HTMLCollection(3) [li.list-item, li.list-item, li.list-item]
+
+tempClassList.forEach(function(){
+    console.log(li)
+})
+VM1786:1 Uncaught TypeError: tempClassList.forEach is not a function
+    at <anonymous>:1:15
+Array.from(tempClassList)   -- converting html collection to array
+
+(3) [li.list-item, li.list-item, li.list-item]
+0
+: 
+li.list-item
+1
+: 
+li.list-item
+2
+: 
+li.list-item
+length
+: 
+3
+[[Prototype]]
+: 
+Array(0)
+
+
+const convertedArr = Array.from(tempClassList)
+undefined
+
+convertedArr
+(3) [li.list-item, li.list-item, li.list-item]
+
+convertedArr.forEach(function(){})
+undefined
+
+convertedArr.forEach(function(li){
+    li.style.color = 'green'
+})
+undefined
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class = "bg-black">
+    <div>
+        <h1 id = "title" class = "heading">Dom Learning on chai aur code</h1>
+        <h2> Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
+    </div>
+</body>
+</html>
