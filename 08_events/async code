@@ -1,0 +1,12 @@
+javascript is synchronous(ek ke baad ek)
+single threaded lang(meaning slow)
+
+execution context
+execute one line of code at a time
+each operation wiats for last to complete before executing
+(call stack, memory heap)
+
+blocking code vs non blocking code
+blocking code - blocks flow of program , read file sync(tm apna kaam roko jb tk mai file access krke lata hun)
+
+non-blocking - doesn't block execution, read file async(tm apna kaam krte rho mai file access krke le aaunga)

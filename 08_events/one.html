@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+
+    //*************************** EVENT IS VERY IMPORTANT
+
+    //js runs sequentially
+    // onclick="alert('owl')" we did this in owl id int the li tag ,another method to do it is
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked") //this will give a pop up saying owl clicked when we will click img of owl
+    // }
+    // //this approach is not very good so we will use another method using events
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // }, false)
+    //it is not necessary to write the third parameter false we can leave it as it is
+    //bu default it is false if we will not write anything
+
+
+    //another eventListener
+    //attachEvent()
+    //jQuery - on
+
+    //event object
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //    console.log(e);
+    //    //there are many different objets in it read it
+    // })
+
+    //for interview
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarrget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    //event propogation - event bubbling, event capturing
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     //when we use false it is event bubbling
+    // }, false)
+
+    // document.getElementById('images').addEventListener('click', function(){
+    //     alert("image clicked")
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // }, false)
+    // //this is event bubbling when we will click owl we will go from inside to outside
+    // //meaning firstly owl cliccked will be printed then image clicked
+    // //because owl is inside image ul
+
+    // document.getElementById('images').addEventListener('click', function(){
+    //     alert("image clicked")
+    // }, true)
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // }, true)
+    // //this will go top to bottom
+    // //we will firstly get image clicked then owl clicked
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // }, false) //this will only print owl clicked not image clicked because propogation will stop
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault() //after clicking google it will not open
+        e.stopPropagation()
+        console.log('google clicked');
+    })
+
+    //hm chahte h ki image click kren aur wo gayab ho jaye
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.parentNode); //to get li of every image
+    //     let removeIt = e.target.parentNode
+    //     removeIt.remove();
+    //     // or use
+    //     //removeIt.parentNode.removeChild(removeIt)
+    // }, false)//this will remove all image
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode); //to get li of every image
+        if(e.target.tagName === 'IMG')
+        {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            
+        }
+    }, false)
+
+</script>
+</html>

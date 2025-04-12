@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // setTimeout(function(){
+    //     console.log("Kritika");
+    // }, 2000)
+    //this 2000 is time in milisecond
+    //in console when we will see Kritika will be printed after 2 sec
+    //The setTimeout() is executed only once.
+    //If you need repeated executions, use setInterval() instead.
+
+    //or we can also do this using passing reference of function
+    const sayKritika = function(){
+        console.log("Kritika");
+    }
+    setTimeout(sayKritika, 2000)
+
+    //document.querySelector('h1').innerHTML = 'best JS series' //this will change the h1 heading set earlier
+    //if i want this to be changes after 2 sec
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = 'best JS series' 
+    }
+    const changeMe = setTimeout(changeText, 2000)
+
+//how to stop this setTimeout, this is done using clearTImeout but it needs reference of timeout
+    //clearTimeout(changeMe)
+    //applying on event
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("Stopped")
+    })//now if we will click stop button the name will not be changed
+</script>
+</html>
